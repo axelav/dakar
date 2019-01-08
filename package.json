@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-config-react-app": "^3.0.5",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "next": "^7.0.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "store": "^2.0.12",
+    "tachyons": "^4.11.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "now-build": "npm run build && npm run export -- -o dist"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "default-case": "off",
+      "react/prop-types": 1
+    }
+  }
+}
