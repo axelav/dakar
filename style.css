@@ -1,52 +1,15 @@
 @import '~tachyons';
 
-/* :root { */
-/*   --f6: 0.0875rem; */
-/*   --light-gray: #eee; */
-/*   --near-white: #f4f4f4; */
-/*   --spacing-small: 0.5rem; */
-/*   --spacing-medium: 1rem; */
-/*   --spacing-large: 2rem; */
-/* } */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-/* body { */
-/*   -webkit-font-smoothing: antialiased; */
-/*   text-rendering: optimizeLegibility; */
-/* } */
+img {
+  display: block;
+  margin: 0 auto 4rem;
+}
 
-/* h5, */
-/* h6 { */
-/*   font-size: var(--f6); */
-/* } */
-
-/* hr { */
-/*   background: var(--light-gray); */
-/*   border: none; */
-/*   height: 1px; */
-/*   margin: var(--spacing-large) 0; */
-/* } */
-
-/* tbody tr:nth-child(odd) { */
-/*   background-color: var(--near-white); */
-/* } */
-
-/* th, */
-/* td { */
-/*   padding: var(--spacing-small) var(--spacing-medium); */
-/* } */
-
-/* th { */
-/*   font-size: var(--f6); */
-/*   text-align: left; */
-/*   text-transform: uppercase; */
-/* } */
-
-/* iframe, */
-/* video { */
-/*   display: block; */
-/*   margin: var(--spacing-large) 0; */
-/* } */
-
-/* .tabular-nums { */
-/*   font-variant-numeric: tabular-nums; */
-/* } */
+.tab-nums {
+  font-variant-numeric: tabular-nums;
+}

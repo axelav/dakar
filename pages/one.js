@@ -4,8 +4,8 @@ import '../style.css'
 class One extends Component {
   render() {
     return (
-      <div className="sans-serif f5 ma4">
-        <h1 className="f2">Day One - Dakar 2019</h1>
+      <div className="sans-serif near-black f5">
+        <h1 className="f2 mt0 mb4">Day One</h1>
         <img src="/static/1/dakar-2019-day01-01.gif" alt="" />
         <img src="/static/1/0d5MWMI.gif" alt="" />
         <img
