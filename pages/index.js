@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import DayOne from './one'
 import DayTwo from './two'
 import DayThree from './three'
-// import DayFour from './four'
+import DayFour from './four'
 import '../style.css'
 
 class Index extends Component {
@@ -151,11 +151,11 @@ class Index extends Component {
             <h2 className="f4 mt0 mb4">Images</h2>
             <div className="vh-75-ns overflow-y-auto-ns pb7">
               {
-                // <Link prefetch href="/four">
-                //   <a className="link blue hover-dark-blue">
-                //     <DayFour />
-                //   </a>
-                // </Link>
+                <Link prefetch href="/four">
+                  <a className="link blue hover-dark-blue">
+                    <DayFour />
+                  </a>
+                </Link>
               }
               <Link prefetch href="/three">
                 <a className="link blue hover-dark-blue">
