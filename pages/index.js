@@ -7,6 +7,12 @@ import DayOne from './one'
 import DayTwo from './two'
 import DayThree from './three'
 import DayFour from './four'
+import DayFive from './five'
+import DaySix from './six'
+import DaySeven from './seven'
+import DayEight from './eight'
+import DayNine from './nine'
+import DayTen from './ten'
 import '../style.css'
 
 class Index extends Component {
@@ -150,13 +156,41 @@ class Index extends Component {
           <div className="w-third-ns">
             <h2 className="f4 mt0 mb4">Images</h2>
             <div className="vh-75-ns overflow-y-auto-ns pb7">
-              {
-                <Link prefetch href="/four">
-                  <a className="link blue hover-dark-blue">
-                    <DayFour />
-                  </a>
-                </Link>
-              }
+              <Link prefetch href="/ten">
+                <a className="link blue hover-dark-blue">
+                  <DayTen />
+                </a>
+              </Link>
+              <Link prefetch href="/nine">
+                <a className="link blue hover-dark-blue">
+                  <DayNine />
+                </a>
+              </Link>
+              <Link prefetch href="/eight">
+                <a className="link blue hover-dark-blue">
+                  <DayEight />
+                </a>
+              </Link>
+              <Link prefetch href="/seven">
+                <a className="link blue hover-dark-blue">
+                  <DaySeven />
+                </a>
+              </Link>
+              <Link prefetch href="/six">
+                <a className="link blue hover-dark-blue">
+                  <DaySix />
+                </a>
+              </Link>
+              <Link prefetch href="/five">
+                <a className="link blue hover-dark-blue">
+                  <DayFive />
+                </a>
+              </Link>
+              <Link prefetch href="/four">
+                <a className="link blue hover-dark-blue">
+                  <DayFour />
+                </a>
+              </Link>
               <Link prefetch href="/three">
                 <a className="link blue hover-dark-blue">
                   <DayThree />
