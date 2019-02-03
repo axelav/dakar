@@ -12,6 +12,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-movable": "^1.0.1",
     "store": "^2.0.12",
     "tachyons": "^4.11.1"
   },
