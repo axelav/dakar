@@ -137,9 +137,9 @@ class Index extends Component {
       <Layout>
         <h1 className="f2 mt0 mb4">Dakar 2019</h1>
         <div className="flex-ns">
-          <div className="w-third-ns">
+          <div className="w-50-ns">
             <h2 className="f4 mt0 mb4">Links</h2>
-            <div className="vh-75-ns overflow-y-auto-ns pr2-ns">
+            <div className="vh-75-ns overflow-y-auto-ns pb7-m pr2-ns">
               <List
                 values={links}
                 onChange={this.handleMove}
@@ -171,19 +171,21 @@ class Index extends Component {
               </form>
             </div>
           </div>
-          <div className="w-third-ns">
-            <h2 className="f4 mt0 mb4">Riders</h2>
-            <div className="vh-75-ns overflow-y-auto-ns">
-              <ul className="pl4 mt0 mb4">
-                {riders.map(({ name, bib, country }, index) => (
-                  <li key={index} className="mb2">
-                    {bib} &mdash; {name} ({country})
-                  </li>
-                ))}
-              </ul>
+          {/*
+            <div className="w-third-ns">
+              <h2 className="f4 mt0 mb4">Riders</h2>
+              <div className="vh-75-ns overflow-y-auto-ns">
+                <ul className="pl4 mt0 mb4">
+                  {riders.map(({ name, bib, country }, index) => (
+                    <li key={index} className="mb2">
+                      {bib} &mdash; {name} ({country})
+                      </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-          <div className="w-third-ns">
+            */}
+          <div className="w-50-ns">
             <h2 className="f4 mt0 mb4">Images</h2>
             <div className="vh-75-ns overflow-y-auto-ns pb7">
               <Link prefetch href="/ten">
