@@ -104,6 +104,8 @@ class Index extends Component {
               target="_blank"
               rel="noopener noreferrer"
               className="link blue hover-dark-blue"
+              onMouseDown={e => e.stopPropagation()}
+              onTouchStart={e => e.stopPropagation()}
             >
               {text}
             </a>
