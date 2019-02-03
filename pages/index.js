@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import store from 'store'
+import { List, arrayMove } from 'react-movable'
 import { permanentLinks, riders } from '../data'
 import Layout from '../components/Layout'
 import DayOne from './one'
@@ -56,6 +57,15 @@ class Index extends Component {
     store.set('links', newLinks)
   }
 
+  handleMove = ({ oldIndex, newIndex }) => {
+    this.setState(prevState => {
+      const newLinks = arrayMove(prevState.links, oldIndex, newIndex)
+      store.set('links', newLinks)
+
+      return { links: newLinks }
+    })
+  }
+
   // handleUpdateTimestamp = index => {
   //   const { links } = this.state
   //   const { href, text } = links[index]
@@ -76,6 +86,48 @@ class Index extends Component {
     }
   }
 
+  renderList = ({ children, props }) => (
+    <ul className="pl4 mt0 mb4" {...props}>
+      {children}
+    </ul>
+  )
+
+  renderItem = ({ value, index, isDragged, props }) => {
+    const { href, text, timestamp } = value
+
+    return (
+      <li className={isDragged ? 'sans-serif b' : 'mb2'} {...props}>
+        <div className="flex justify-between">
+          <div>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link blue hover-dark-blue"
+            >
+              {text}
+            </a>
+            <span
+              className="red ml2 pointer"
+              onClick={() => this.handleDelete(index)}
+              onMouseDown={e => e.stopPropagation()}
+              onTouchStart={e => e.stopPropagation()}
+            >
+              X
+            </span>
+          </div>
+          {timestamp ? (
+            <span className="gray tab-nums">
+              {new Date(timestamp).toLocaleString()}
+            </span>
+          ) : (
+            ''
+          )}
+        </div>
+      </li>
+    )
+  }
+
   render() {
     const { href, text, links } = this.state
 
@@ -86,37 +138,13 @@ class Index extends Component {
           <div className="w-third-ns">
             <h2 className="f4 mt0 mb4">Links</h2>
             <div className="vh-75-ns overflow-y-auto-ns pr2-ns">
-              <ul className="pl4 mt0 mb4">
-                {links.map(({ href, text, timestamp }, index) => (
-                  <li key={index} className="mb2">
-                    <div className="flex justify-between">
-                      <div>
-                        <a
-                          href={href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="link blue hover-dark-blue"
-                        >
-                          {text}
-                        </a>
-                        <span
-                          className="red ml2 pointer"
-                          onClick={() => this.handleDelete(index)}
-                        >
-                          X
-                        </span>
-                      </div>
-                      {timestamp ? (
-                        <span className="gray tab-nums">
-                          {new Date(timestamp).toLocaleString()}
-                        </span>
-                      ) : (
-                        ''
-                      )}
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <List
+                values={links}
+                onChange={this.handleMove}
+                renderList={this.renderList}
+                renderItem={this.renderItem}
+                lockVertically
+              />
               <h2 className="f4 mt0 mb4">Add New Link</h2>
               <form onSubmit={this.handleSubmit} className="mb4">
                 <input
